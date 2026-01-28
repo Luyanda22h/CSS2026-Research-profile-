@@ -63,17 +63,13 @@ menu = st.sidebar.radio(
         "Education",
         "Experience",
         "Skills",
-        "Interests",
-        "Download CV"
+        "Interests"
     ]
 )
 
 st.sidebar.markdown("---")
 st.sidebar.write("📧 emgeeluyanda@gmail.com")
 st.sidebar.write("📞 066 598 7514")
-
-# ---------------- MAIN CONTENT ----------------
-st.title("Curriculum Vitae")
 
 # -------- PROFILE --------
 if menu == "Profile":
