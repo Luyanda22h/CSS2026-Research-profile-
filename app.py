@@ -127,15 +127,3 @@ st.markdown(
 - Chess and sports  
 """
 )
-
-# ---------------- CV DOWNLOAD ----------------
-st.markdown("---")
-st.header("Download CV")
-
-with open("Luyanda Mshengu's Edited CV,2025.pdf", "rb") as pdf_file:
-    st.download_button(
-        label="📄 Download PDF CV",
-        data=pdf_file,
-        file_name="Luyanda_Mshengu_CV_2025.pdf",
-        mime="application/pdf"
-    )
