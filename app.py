@@ -7,123 +7,186 @@ st.set_page_config(
     layout="wide"
 )
 
-# ---------------- HEADER ----------------
-st.title("Luyanda Samkelo Mshengu")
-st.subheader("BSc Mathematical Sciences Student")
-
-st.write(
-    """
-📍 Sefako Makgatho Health Sciences University  
-📧 **emgeeluyanda@gmail.com**  
-📞 **066 598 7514**
-"""
-)
-
-st.markdown("---")
-
-# ---------------- PROFILE ----------------
-st.header("Profile")
-
-st.write(
-    """
-Final-year **BSc Mathematical Sciences** student majoring in **Mathematics, Statistics, and Computer Science**.
-Highly motivated and analytical, with strong problem-solving skills and a keen interest in applying
-quantitative and computational techniques to real-world problems.
-Eager to gain practical experience, grow professionally, and contribute meaningfully in data-driven environments.
-"""
-)
-
-# ---------------- EDUCATION ----------------
-st.header("Education")
-
-st.write("**Bachelor of Science in Mathematical Sciences**")
-st.write("Sefako Makgatho Health Sciences University | 2023 – 2025")
-st.write("Majors: Mathematics, Statistics, Computer Science")
-
-st.write("")
-st.write("**National Senior Certificate (NSC)**")
-st.write("Matomela High School | 2021")
-
-# ---------------- EXPERIENCE ----------------
-st.header("Work Experience")
-
-st.subheader("Mathematical, Statistical & Computer Sciences Mentor")
-st.write("Sefako Makgatho Health Sciences University | Jan 2023 – Dec 2023")
-
+# ---------------- CUSTOM CSS ----------------
 st.markdown(
     """
-- Monitored and assessed students’ academic progress  
-- Provided academic and emotional support to fellow students  
-- Assisted first-year students with transition into university life  
-- Maintained accurate and confidential student records  
-- Participated in weekly mentoring team meetings  
-"""
+    <style>
+    body {
+        background-color: #f7f9fc;
+    }
+
+    .main {
+        padding: 2rem;
+    }
+
+    h1, h2, h3 {
+        color: #1f2933;
+    }
+
+    p, li {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .section-card {
+        background-color: white;
+        padding: 20px;
+        border-radius: 12px;
+        margin-bottom: 20px;
+        box-shadow: 0px 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .sidebar-title {
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    .sidebar-subtitle {
+        font-size: 14px;
+        color: #555;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
 )
 
-st.subheader("BSc Mathematical Sciences Group Tutor")
-st.write("Sefako Makgatho Health Sciences University | Jan 2024 – Jul 2024")
+# ---------------- SIDEBAR ----------------
+st.sidebar.markdown("<div class='sidebar-title'>Luyanda Mshengu</div>", unsafe_allow_html=True)
+st.sidebar.markdown("<div class='sidebar-subtitle'>BSc Mathematical Sciences</div>", unsafe_allow_html=True)
 
-st.markdown(
-    """
-- Tutored Mathematics and Statistics to small groups of students  
-- Marked assessments with accuracy and met strict deadlines  
-- Invigilated first-year Statistics tests and examinations  
-- Compiled and maintained student intake registers using Microsoft Word  
-"""
+st.sidebar.markdown("---")
+
+menu = st.sidebar.radio(
+    "Navigation",
+    [
+        "Profile",
+        "Education",
+        "Experience",
+        "Skills",
+        "Interests",
+        "Download CV"
+    ]
 )
 
-st.subheader("QuantifyYourFuture (QYF) Intern")
-st.write("Virtual Internship | Jan 2025 – Feb 2025")
+st.sidebar.markdown("---")
+st.sidebar.write("📧 emgeeluyanda@gmail.com")
+st.sidebar.write("📞 066 598 7514")
 
-st.markdown(
-    """
-- Extracted, cleaned, and prepared large datasets under tight deadlines  
-- Collaborated with a virtual team to meet a 48-hour delivery window  
-- Built and validated data models for accurate analysis  
-- Used **Python (Pandas, NumPy, Matplotlib, Scikit-Learn)** for EDA and automation  
-- Applied Microsoft Excel as a data analysis and programming tool  
-"""
-)
+# ---------------- MAIN CONTENT ----------------
+st.title("Curriculum Vitae")
 
-# ---------------- SKILLS ----------------
-st.header("Skills")
+# -------- PROFILE --------
+if menu == "Profile":
+    st.markdown("<div class='section-card'>", unsafe_allow_html=True)
+    st.header("Profile")
+    st.write(
+        """
+        Final-year **BSc Mathematical Sciences** student majoring in **Mathematics, Statistics, and Computer Science**.
+        Strong analytical thinker with a passion for problem-solving and data-driven decision-making.
+        Seeking opportunities to gain practical experience and contribute meaningfully in quantitative and
+        computational environments.
+        """
+    )
+    st.markdown("</div>", unsafe_allow_html=True)
 
-col1, col2 = st.columns(2)
+# -------- EDUCATION --------
+elif menu == "Education":
+    st.markdown("<div class='section-card'>", unsafe_allow_html=True)
+    st.header("Education")
 
-with col1:
-    st.subheader("Technical Skills")
+    st.subheader("Bachelor of Science in Mathematical Sciences")
+    st.write("Sefako Makgatho Health Sciences University | 2023 – 2025")
+    st.write("Majors: Mathematics, Statistics, Computer Science")
+
+    st.write("")
+
+    st.subheader("National Senior Certificate (NSC)")
+    st.write("Matomela High School | 2021")
+    st.markdown("</div>", unsafe_allow_html=True)
+
+# -------- EXPERIENCE --------
+elif menu == "Experience":
+    st.markdown("<div class='section-card'>", unsafe_allow_html=True)
+    st.header("Work Experience")
+
+    st.subheader("Mathematical, Statistical & Computer Sciences Mentor")
+    st.write("SMU | Jan 2023 – Dec 2023")
     st.markdown(
         """
-- Python (Basic)  
-- Pandas, NumPy, Matplotlib, Scikit-Learn  
-- Microsoft Excel (Intermediate)  
-- Microsoft Word (Intermediate)  
-- PowerPoint (Intermediate)  
-- Power BI (Basic)  
-"""
+        - Monitored student academic progress  
+        - Provided academic and emotional support  
+        - Assisted first-year students with university transition  
+        - Maintained confidential academic records  
+        - Participated in weekly mentoring meetings  
+        """
     )
 
-with col2:
-    st.subheader("Transferable Skills")
+    st.subheader("BSc Mathematical Sciences Group Tutor")
+    st.write("SMU | Jan 2024 – Jul 2024")
     st.markdown(
         """
-- Strong analytical and problem-solving skills  
-- Clear communication and presentation of insights  
-- Mentoring and peer-support experience  
-- Ability to work under pressure and tight deadlines  
-- Growth mindset and eagerness to learn  
-"""
+        - Tutored Mathematics and Statistics  
+        - Marked assessments accurately and on time  
+        - Invigilated Statistics tests and exams  
+        - Compiled student intake registers  
+        """
     )
 
-# ---------------- HOBBIES ----------------
-st.header("Interests & Hobbies")
+    st.subheader("QuantifyYourFuture (QYF) Intern")
+    st.write("Virtual Internship | Jan 2025 – Feb 2025")
+    st.markdown(
+        """
+        - Cleaned and analyzed large datasets under tight deadlines  
+        - Built and validated data models  
+        - Automated EDA using Python  
+        - Worked with Pandas, NumPy, Matplotlib, Scikit-Learn  
+        """
+    )
+    st.markdown("</div>", unsafe_allow_html=True)
 
-st.markdown(
-    """
-- Learning languages  
-- Web design  
-- Reading and writing  
-- Fitness and working out  
-- Chess and sports  
-"""
-)
+# -------- SKILLS --------
+elif menu == "Skills":
+    st.markdown("<div class='section-card'>", unsafe_allow_html=True)
+    st.header("Skills")
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.subheader("Technical Skills")
+        st.markdown(
+            """
+            - Python (Basic)  
+            - Pandas, NumPy, Matplotlib, Scikit-Learn  
+            - Microsoft Excel (Intermediate)  
+            - Microsoft Word (Intermediate)  
+            - Power BI (Basic)  
+            """
+        )
+
+    with col2:
+        st.subheader("Transferable Skills")
+        st.markdown(
+            """
+            - Analytical problem-solving  
+            - Clear communication of insights  
+            - Mentoring & peer support  
+            - Time management under pressure  
+            - Growth mindset  
+            """
+        )
+    st.markdown("</div>", unsafe_allow_html=True)
+
+# -------- INTERESTS --------
+elif menu == "Interests":
+    st.markdown("<div class='section-card'>", unsafe_allow_html=True)
+    st.header("Interests & Hobbies")
+    st.markdown(
+        """
+        - Learning languages  
+        - Web design  
+        - Reading and writing  
+        - Fitness & working out  
+        - Chess and sports  
+        """
+    )
+    st.markdown("</div>", unsafe_allow_html=True)
